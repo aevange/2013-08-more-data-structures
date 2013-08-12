@@ -1,4 +1,4 @@
-/*var makeBinarySearchTree = function(val){
+var makeBinarySearchTree = function(val){
   var tree;
   return tree;
 };
@@ -24,4 +24,5 @@ var makeNode = function(val){
   node.value = val;
   node.right;
   node.left;
-};*/
+  return node;
+};
