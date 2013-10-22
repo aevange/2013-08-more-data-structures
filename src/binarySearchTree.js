@@ -55,8 +55,3 @@ binaryMethods.depthFirstLog = function(callback) {
   this.left && this.left.depthFirstLog(callback);
   this.right && this.right.depthFirstLog(callback);
 };
-
-// binaryMethods.bredthFirstLog() = function(callback) {
-//   var generations = [];
-//   generations.push([this]);
-// }

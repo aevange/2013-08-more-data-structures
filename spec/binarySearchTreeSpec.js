@@ -10,7 +10,6 @@ describe("binarySearchTree", function() {
     expect(binarySearchTree.contains).toEqual(jasmine.any(Function));
     expect(binarySearchTree.depthFirstLog).toEqual(jasmine.any(Function));
   });
-  // add more tests here to test the functionality of binarySearchTree
 
   it("should set the first value passed", function(){
     expect(binarySearchTree.value).toEqual(6);
