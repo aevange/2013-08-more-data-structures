@@ -22,5 +22,13 @@ HashTable.prototype.retrieve = function(k){
   return value;
 };
 
-HashTable.prototype.remove = function(){
+HashTable.prototype.remove = function(k){
+  var value;
+  var i = getIndexBelowMaxForKey(k, this._limit);
+  var elements = this._storage.get(i);
+
+  _.each(elements, function(el,i,array){
+    el[0] === k && (value = el[1]) && array.splice(i,1);
+  });
+  return value;
 };
