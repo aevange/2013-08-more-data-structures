@@ -5,10 +5,11 @@ describe("binarySearchTree", function() {
     binarySearchTree = makeBinarySearchTree(6);
   });
 
-  it("should have methods named 'insert', 'contains', and 'depthFirstLog", function() {
+  it("should have methods named 'insert', 'contains', 'depthFirstLog' and 'bredthFirstLog'", function() {
     expect(binarySearchTree.insert).toEqual(jasmine.any(Function));
     expect(binarySearchTree.contains).toEqual(jasmine.any(Function));
     expect(binarySearchTree.depthFirstLog).toEqual(jasmine.any(Function));
+    expect(binarySearchTree.bredthFirstLog).toEqual(jasmine.any(Function));
   });
 
   it("should set the first value passed", function(){
