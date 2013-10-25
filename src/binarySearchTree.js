@@ -55,3 +55,28 @@ binaryMethods.depthFirstLog = function(callback) {
   this.left && this.left.depthFirstLog(callback);
   this.right && this.right.depthFirstLog(callback);
 };
+
+binaryMethods.bredthFirstLog = function(callback) {
+  var queue = this.makeQueue();
+  for (var i = 0; i < queue.length; i++) {
+    callback.call(queue[i]);
+  }
+};
+
+binaryMethods.makeQueue = function() {
+  var queue = [this];
+  var descendents = getDescendent([this]);
+  return queue.concat(descendents);
+}
+
+var getDescendent = function(array) {
+  var results = [];
+  for (var i = 0; i < array.length; i++) {
+    array[i].left && results.push(array[i].left);
+    array[i].right && results.push(array[i].right);
+  }
+  if (results.length) {
+    results = results.concat(getDescendent(results));
+  }
+  return results;
+};
