@@ -76,4 +76,28 @@ describe("binarySearchTree", function() {
     expect(queue[9].value).toEqual(7);
     expect(queue[10].value).toEqual(11);
   });
+
+  it("should call the callback function passed to bredthFirstLog on a bredth first queue of nodes", function(){
+    //gen 2
+    binarySearchTree.insert(9);
+    binarySearchTree.insert(3);
+    //gen 3
+    binarySearchTree.insert(10);
+    binarySearchTree.insert(8);
+    binarySearchTree.insert(2);
+    binarySearchTree.insert(4);
+    //gen 4
+    binarySearchTree.insert(5);
+    binarySearchTree.insert(11);
+    binarySearchTree.insert(7);
+    binarySearchTree.insert(1);
+
+    //utilize closure scope to test
+    var i = [];
+    binarySearchTree.bredthFirstLog(function(){
+      i.push(this.value);
+    });
+
+    expect(i).toEqual([6,3,9,2,4,8,10,1,5,7,11]);
+  });
 });
