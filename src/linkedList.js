@@ -17,10 +17,12 @@ var makeLinkedList = function(){
 
   list.removeHead = function(){
     tailEqualsHead();
-    var tempHead = list.head.value;
-    list.head = list.head.next;
-    list.head && (list.head.previous = null);
-    return tempHead;
+    var oldHeadVal = this.head.value;
+    var nextHead = this.head.next;
+    nextHead.previous = null;
+    delete this.head;
+    this.head = nextHead;
+    return oldHeadVal;
   };
 
   list.contains = function(val){
