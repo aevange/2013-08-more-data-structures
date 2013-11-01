@@ -101,9 +101,7 @@ describe("linkedList", function() {
     expect(linkedList.head.value).toEqual(1);
     linkedList.addToTail(2);
     expect(linkedList.head.value).toEqual(1);
-    debugger;
     linkedList.removeHead();
-    debugger;
     expect(linkedList.head.value).toEqual(2);
     // expect(linkedList.head.previous).toEqual(null);
   });
