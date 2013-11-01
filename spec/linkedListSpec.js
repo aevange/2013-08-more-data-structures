@@ -98,9 +98,14 @@ describe("linkedList", function() {
 
   it("should update the new heads previous property when we call removeHead", function(){
     linkedList.addToTail(1);
+    expect(linkedList.head.value).toEqual(1);
     linkedList.addToTail(2);
+    expect(linkedList.head.value).toEqual(1);
+    debugger;
     linkedList.removeHead();
-    expect(linkedList.head.previous).toEqual(null);
+    debugger;
+    expect(linkedList.head.value).toEqual(2);
+    // expect(linkedList.head.previous).toEqual(null);
   });
 //addToHead
   it("should move head to new node when addToHead method is called", function(){
